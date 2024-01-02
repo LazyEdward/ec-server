@@ -130,3 +130,5 @@ dist
 .pnp.*
 
 EC-fullstack.drawio
+mongo-atlas.txt
+ec-server*

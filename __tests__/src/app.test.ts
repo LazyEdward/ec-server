@@ -2,7 +2,7 @@ import request from 'supertest'
 import app from "../../src/app"
 
 describe("app test", () => {
-	it("vaild GET", async() => {
+	it("Vaild GET", async() => {
 		const res = await request(app).get("/")
 
 		expect(res.status).toEqual(404);
@@ -10,7 +10,7 @@ describe("app test", () => {
 		expect(res.text).toEqual("<b>GET REQUEST NOT SUPPORTED</b>")
 	})
 
-	it("vaild POST", async() => {
+	it("Vaild POST", async() => {
 		const res = await request(app).post("/")
 
 		expect(res.status).toEqual(404);
