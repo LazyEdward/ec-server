@@ -6,14 +6,16 @@ describe("app test", () => {
 		const res = await request(app).get("/")
 
 		expect(res.status).toEqual(404);
-		expect(res.type).toEqual('text/html');
-		expect(res.text).toEqual("<b>GET REQUEST NOT SUPPORTED</b>")
+		// expect(res.type).toEqual('text/html');
+		// expect(res.text).toEqual("<b>GET REQUEST NOT SUPPORTED</b>")
+		expect(res.body).toEqual({"result": "ENDPOINT NOT EXIST"})
 	})
 
 	it("Vaild POST", async() => {
 		const res = await request(app).post("/")
 
 		expect(res.status).toEqual(404);
-		expect(res.body).toEqual({"result": "POST REQUEST NOT SUPPORTED ON ROOT"})
+		// expect(res.body).toEqual({"result": "POST REQUEST NOT SUPPORTED ON ROOT"})
+		expect(res.body).toEqual({"result": "ENDPOINT NOT EXIST"})
 	})
 })

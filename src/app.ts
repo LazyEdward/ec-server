@@ -2,12 +2,19 @@ import express from "express";
 
 const app = express();
 
-app.get('/', (req, res) => {
-	res.status(404).send("<b>GET REQUEST NOT SUPPORTED</b>")
+app.use(express.json());
+app.use(express.urlencoded({extended: true}))
+
+app.get('/', (req, res, next) => {
+	next()
 })
 
-app.post('/', (req, res) => {
-	res.status(404).json({"result": "POST REQUEST NOT SUPPORTED ON ROOT"})
+app.post('/', (req, res, next) => {
+	next()
+})
+
+app.use((req, res, next) => {
+	res.status(404).json({"result": "ENDPOINT NOT EXIST"})
 })
 
 export default app;
